@@ -28,3 +28,4 @@ springboot_group: springboot
 
 # Install as service by default. Optional
 springboot_service_install: true
+
