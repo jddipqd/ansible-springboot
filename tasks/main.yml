@@ -41,7 +41,7 @@
     owner: "{{ springboot_user }}"
     group: "{{ springboot_group }}"
     mode: "u+x"
-  when: springboot_src_file is defined and springboot_src_file|length > 0
+  when: springboot_src_file is defined
   notify:
     - "Restart application"
 
@@ -52,7 +52,7 @@
     owner: "{{ springboot_user }}"
     group: "{{ springboot_group }}"
     mode: "u+x"
-  when: springboot_src_url is defined and springboot_src_url|length > 0
+  when: springboot_src_url is defined
   notify:
     - "Restart application"
 
@@ -62,7 +62,7 @@
     dest: "{{ springboot_deploy_folder }}"
     owner: "{{ springboot_user }}"
     group: "{{ springboot_group }}"
-  when: springboot_propertyfile_template
+  when: springboot_propertyfile_template is defined
   notify:
     - "Restart application"
 
@@ -72,7 +72,7 @@
     dest: "{{ springboot_deploy_folder }}"
     owner: "{{ springboot_user }}"
     group: "{{ springboot_group }}"
-  when: springboot_configuration_template
+  when: springboot_configuration_template is defined
   notify:
     - "Restart application"
     
@@ -82,7 +82,7 @@
     dest: "{{ springboot_deploy_folder }}"
     owner: "{{ springboot_user }}"
     group: "{{ springboot_group }}"
-  when: springboot_logging_template
+  when: springboot_logging_template is defined
   notify:
     - "Restart application"
 
