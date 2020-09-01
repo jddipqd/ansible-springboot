@@ -75,6 +75,16 @@
   when: springboot_configuration_template
   notify:
     - "Restart application"
+    
+- name: "Deploy logging config"
+  template:
+    src: "{{ springboot_logging_template }}"
+    dest: "{{ springboot_deploy_folder }}"
+    owner: "{{ springboot_user }}"
+    group: "{{ springboot_group }}"
+  when: springboot_logging_template
+  notify:
+    - "Restart application"
 
 - name: Install as service
   include: service.yml
