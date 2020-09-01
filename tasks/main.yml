@@ -58,13 +58,14 @@
 
 - name: "Deploy app properties"
   template:
-    src: "{{ springboot_propertyfile_template }}"
+    src: "{{ item }}"
     dest: "{{ springboot_deploy_folder }}"
     owner: "{{ springboot_user }}"
     group: "{{ springboot_group }}"
+  loop: "{{ springboot_propertyfile_template.split() if springboot_propertyfile_template is string else springboot_propertyfile_template }}"
   when: springboot_propertyfile_template is defined
   notify:
-    - "Restart application"
+    - "Restart application"    
 
 - name: "Deploy app config"
   template:

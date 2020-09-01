@@ -17,7 +17,7 @@ https://docs.spring.io/spring-boot/docs/current/reference/html/deployment-instal
 | springboot_src_file  |  | Mandatory or use ```springboot_src_url```. Path of the springboot jar to deploy.  |
 | springboot_src_url |  | Mandatory or use ```springboot_src_file```. Url of the springboot jar to deploy. |
 | springboot_application_name |  | Mandatory. Spring application name. Use to name jar to be deployed, systemd service, ... |
-| springboot_propertyfile_template | | Optional. Path towards a template to manage your app properties (eg : application.properties, application.yml).  |
+| springboot_propertyfile_template | | Optional. Path towards a template to manage your app properties (eg : application.properties, application.yml). You can also pass a list if you need multiple property files (eg. for different profiles) |
 | springboot_configuration_template | | Optional. Path towards a template to manage your app config (see : https://docs.spring.io/spring-boot/docs/current/reference/html/deployment-install.html#deployment-script-customization-when-it-runs).  |
 | springboot_service_install | true | Use false if you don't want this role to register system service for the application.
 | springboot_logging_template | | Optional. Path towards a template to manage your logging configuration (eg : logback.xml).  |
