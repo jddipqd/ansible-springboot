@@ -20,6 +20,7 @@ https://docs.spring.io/spring-boot/docs/current/reference/html/deployment-instal
 | springboot_propertyfile_template | | Optional. Path towards a template to manage your app properties (eg : application.properties, application.yml).  |
 | springboot_configuration_template | | Optional. Path towards a template to manage your app config (see : https://docs.spring.io/spring-boot/docs/current/reference/html/deployment-install.html#deployment-script-customization-when-it-runs).  |
 | springboot_service_install | true | Use false if you don't want this role to register system service for the application.
+| springboot_logging_template | | Optional. Path towards a template to manage your logging configuration (eg : logback.xml).  |
 | springboot_deploy_folder | /opt/{{ springboot_application_name }} | Folder where application jar is deployed |
 | springboot_user | springboot | Linux user to run spring boot application |
 | springboot_group | springboot | Linux group to run spring boot application |
